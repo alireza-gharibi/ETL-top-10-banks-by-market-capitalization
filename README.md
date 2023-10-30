@@ -4,4 +4,4 @@ I have been hired as a data engineer by research organization. my boss has asked
 
 [Data url](https://web.archive.org/web/20230908091635 )
 
-[Exchange rate CSV path](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/labs/v2/exchange_rate.csv)
+[Exchange rate CSV](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/labs/v2/exchange_rate.csv)
