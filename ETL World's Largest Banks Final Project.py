@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
 
 import sqlite3
 import pandas as pd
@@ -10,9 +8,6 @@ from bs4 import BeautifulSoup
 import requests as r
 from datetime import datetime
 import numpy as np
-
-
-# In[3]:
 
 
 # Connecting to the URL...
@@ -24,9 +19,6 @@ try :
 except r.exceptions.RequestException :
     print("The URL cant't be reached!")
     
-
-
-# In[4]:
 
 
 def extract():
@@ -45,8 +37,6 @@ def extract():
     df = pd.DataFrame({"Name":name,"MC_USD_Billion":MC_USD_Billion}) #creating dataframe
     return df
 
-
-# In[5]:
 
 
 #downloading Exchange rate
@@ -82,8 +72,6 @@ def exchange_rate():
     
 
 
-# In[6]:
-
 
 def transform(df,e_rate):
     '''
@@ -105,21 +93,20 @@ def transform(df,e_rate):
     return df
 
 
-# In[7]:
 
 
 def load_to_csv(df, csv_path):
     df.to_csv(csv_path)
 
 
-# In[8]:
+
 
 
 def load_to_db(df, sql_connection, table_name):
     df.to_sql(table_name, sql_connection, if_exists='replace', index=False)
 
 
-# In[9]:
+
 
 
 def run_query(query_statement, sql_connection):
@@ -128,7 +115,7 @@ def run_query(query_statement, sql_connection):
     print(query_output)
 
 
-# In[16]:
+
 
 
 def log_progress(message): 
@@ -139,7 +126,7 @@ def log_progress(message):
         f.write(timestamp + ' : ' + message + '\n')
 
 
-# In[19]:
+
 
 
 ''' Here, i define the required entities(variables) and call the relevant 
@@ -172,8 +159,6 @@ run_query(query_statement, sql_connection)
 log_progress('Process Complete.')
 sql_connection.close()
 
-
-# In[ ]:
 
 
 
